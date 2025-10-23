@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #FAFBFA; /* soft off-white with green undertones */
+    --color-foreground: #2C3E50; /* dark blue-gray */
+    --color-border: #E8E8E8; /* light gray */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #2D5A27; /* deep forest green */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #2C3E50; /* dark blue-gray */
+    
+    /* Popover Colors */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #2C3E50; /* dark blue-gray */
+    
+    /* Muted Colors */
+    --color-muted: #F8F9F8; /* very light gray-green */
+    --color-muted-foreground: #7F8C8D; /* medium gray */
+    
+    /* Primary Colors */
+    --color-primary: #2D5A27; /* deep forest green */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #7BA05B; /* lighter sage green */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #E67E22; /* warm orange */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors */
+    --color-success: #27AE60; /* vibrant green */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #F39C12; /* amber orange */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    /* Error/Destructive Colors */
+    --color-error: #E74C3C; /* clear red */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #E74C3C; /* clear red */
+    --color-destructive-foreground: #FFFFFF; /* white */
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body, p, span, div {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  .font-caption {
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .shadow-elevation-1 {
+    box-shadow: 0 2px 8px rgba(45, 90, 39, 0.1);
+  }
+  
+  .shadow-elevation-2 {
+    box-shadow: 0 4px 12px rgba(45, 90, 39, 0.12);
+  }
+  
+  .shadow-elevation-3 {
+    box-shadow: 0 8px 16px rgba(45, 90, 39, 0.15);
+  }
+  
+  .shadow-modal {
+    box-shadow: 0 16px 32px rgba(45, 90, 39, 0.2);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideDown {
+    from { 
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-slide-down {
+      animation: none;
+    }
+  }
+}
